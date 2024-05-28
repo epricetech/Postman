@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "b79bc005-4153-4de3-ba44-46b9210e5ced",
+		"name": "Order management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29197134"
+	},
+	"item": [
+		{
+			"name": "Generate reference",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"",
+							"pm.test(\"Should contain reference id\", function () {",
+							"    pm.expect(response.uuid).to.exist;",
+							"});",
+							"",
+							"pm.globals.set(\"referenceId\", response.uuid);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "httpbin.org/uuid",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"uuid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Should contain the reference id\", function () {",
+							"    pm.expect(response.json.referenceId).to.eql(pm.globals.get(\"referenceId\"));",
+							"});",
+							"// these tests failed because the values were hard coded.  below is the fix",
+							"/*pm.test(\"Should contain the customer id\", function () {",
+							"    pm.expect(response.json.customerId).to.eql(200);",
+							"});",
+							"",
+							"pm.test(\"Should contain the product id\", function () {",
+							"    pm.expect(response.json.productId).to.eql(300);",
+							"});",
+							"*/",
+							"pm.test(\"Should contain the customer id\", function () {",
+							"    pm.expect(response.json.customerId).to.eql(pm.iterationData.get('customerId'));",
+							"});",
+							"",
+							"pm.test(\"Should contain the product id\", function () {",
+							"    pm.expect(response.json.productId).to.eql(pm.iterationData.get('productId'));",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"referenceId\": \"{{referenceId}}\",\n\t\"customerId\": {{customerId}},\n\t\"productId\": {{productId}}\n}"
+				},
+				"url": {
+					"raw": "httpbin.org/post",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"url": {
+					"raw": "httpbin.org/status/200",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"status",
+						"200"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
