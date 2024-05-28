@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "af4c2aaf-a9f4-4499-b055-f3215aad343d",
+		"name": "Delete Collection Variables",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29197134"
+	},
+	"item": [
+		{
+			"name": "Delete Variables",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set('name', 'Jamie');\r",
+							"// deletes the collection variable\r",
+							"pm.collectionVariables.unset('name');\r",
+							"//these were set manually at the collection level\r",
+							"pm.collectionVariables.unset('apiKey');\r",
+							"pm.collectionVariables.unset('setting1');\r",
+							"// this will clear all variables\r",
+							"pm.collectionVariables.clear();\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "postman-echo.com/get",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

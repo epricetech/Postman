@@ -1,0 +1,1776 @@
+{
+	"info": {
+		"_postman_id": "7f67d651-cbc8-46e5-b532-d713e6c6d06b",
+		"name": "Java Script API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29197134"
+	},
+	"item": [
+		{
+			"name": "Get Status with message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log('After the request');"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"console.log('Before the request');\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Java Script API test from templates",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status should be up\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.status).to.eql(\"UP\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Defining Variable",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var first_name = \"Eric\";\r",
+							"let age = 45;\r",
+							"let email;  // will return undefined\r",
+							"console.log(\"Hello \" + first_name + \" You are \" + age + \" years old\");\r",
+							"console.log(first_name, age, email);\r",
+							"\r",
+							"firstName = \"Jake\";\r",
+							"console.log(first_name, age, email);\r",
+							"\r",
+							"let firstName2 = \"Jamie\";\r",
+							"let lastName = \"Doe\";\r",
+							"let firstName3 = \"Bob\";\r",
+							"let lastName2 = lastName;\r",
+							"console.log(lastName2);\r",
+							"\r",
+							"let fullName = firstName2 + \" \"+ lastName;\r",
+							"// another way to combine variables.  using the `` backtick and not qotations\r",
+							"let fullName2 = `${firstName3} ${lastName}`;\r",
+							"let intro = `My name is ${first_name} and I am ${age} year old`;\r",
+							"console.log(fullName);\r",
+							"console.log(fullName2);\r",
+							"console.log(intro);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Constant Variables",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const websiteURL = \"http://example.com\";"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mathmatical equations",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let num1 = 27;\r",
+							"let num2 = 43;\r",
+							"let sum = num1 + num2\r",
+							"console.log(sum);\r",
+							"let age = 27;\r",
+							"// increment a number by 1\r",
+							"age++;\r",
+							"console.log(age);\r",
+							"let ag2 = 27;\r",
+							"// decrement number by 1\r",
+							"ag2--;\r",
+							"console.log(ag2);\r",
+							"let sum1 = 4 + parseInt('4');\r",
+							"console.log(sum1);\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Code blocks and variable scopes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// this is a global veriable\r",
+							"let firstName = 'Jamie';\r",
+							"\r",
+							"{\r",
+							"    //this is a block variable\r",
+							"  let firstName = \"John\"  ;\r",
+							"  console.log(firstName);\r",
+							"}\r",
+							"console.log(firstName);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Functions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"function sayHello(){\r",
+							"    console.log(\"Hello from Postman\");\r",
+							"}\r",
+							"sayHello();\r",
+							"sayHello();\r",
+							"\r",
+							"function sayBye(name){\r",
+							"    console.log(`${name},Bye from Postman`);\r",
+							"}\r",
+							"sayBye('Jake');\r",
+							"sayBye('Jamie');\r",
+							"\r",
+							"\r",
+							"function sayHowdy(name){\r",
+							"    let message =`${name},Howdy from Postman`;\r",
+							"    console.log(message);\r",
+							"}\r",
+							"sayHowdy('John');\r",
+							"sayHowdy('John');"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Returning Fucntions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"function add(a,b){\r",
+							"    let sum = a + b;\r",
+							"    console.log(sum);\r",
+							"    return sum;\r",
+							"}\r",
+							"add(4,5);\r",
+							"add(5,6);\r",
+							"let num1 = 5;\r",
+							"let num2 = 7;\r",
+							"console.log(`The result of adding ${num1} and ${num2} is ${add(num1,num2)}`);\r",
+							"\r",
+							"// can be simplified this way\r",
+							"function add(a,b){\r",
+							"     return a + b;\r",
+							"}\r",
+							"let num3 = 5;\r",
+							"let num4 = 7;\r",
+							"console.log(`The result of adding ${num3} and ${num4} is ${add(num3,num4)}`);\r",
+							"\r",
+							"function getRandomNum(max){\r",
+							"    let random =Math.random() * max\r",
+							"    random = Math.floor(random);\r",
+							"    return random ;\r",
+							"}\r",
+							"console.log(getRandomNum(100));\r",
+							"\r",
+							"// or can be written like this\r",
+							"function getRandomNum1(max1){\r",
+							"    return Math.floor(Math.random() * max1);\r",
+							"}\r",
+							"console.log(getRandomNum1(100));\r",
+							"\r",
+							"function getRandomEmail(domain) {\r",
+							"    var random = Math.random().toString(36).substring(7); \r",
+							"    var email = random + '@' + domain;\r",
+							"    return email;\r",
+							"}\r",
+							"\r",
+							"console.log(getRandomEmail('google.com'));\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Arrow Functions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//shorthand syntax for writing a function and assigning it to a variable\r",
+							"const hello = () =>{\r",
+							"    console.log(\"Hello\");\r",
+							"}\r",
+							"hello();\r",
+							"\r",
+							"const hello1 = (firstName) =>{\r",
+							"    console.log(\"Hello \" + firstName);\r",
+							"}\r",
+							"hello1('Jamie');\r",
+							"// single line arrow function\r",
+							"const add = (a,b) => a + b;\r",
+							"console.log(add(4,5));\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Call back funtions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const announceBreakfast = () => {\r",
+							"    console.log('Breakfast is ready');\r",
+							"}\r",
+							"// this will allow for a delay between the calling of the functions\r",
+							"//setTimeout(() => console.log('Breakfast is ready'), 5000);\r",
+							"//console.log('Serving Coffee');\r",
+							"\r",
+							"function makeBreakfast(callBackFunction) {\r",
+							"    console.log(\"Starting to make breakfast\");\r",
+							"    setTimeout(callBackFunction, 5000);\r",
+							"    console.log('Serving coffee');\r",
+							"}\r",
+							"makeBreakfast(announceBreakfast);\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Objects",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const client = {\r",
+							"    firstName:'Jamie',\r",
+							"    lastName: 'Doe',\r",
+							"    age: 29,\r",
+							"    isMarried: false,\r",
+							"    email: 'jamie@example.com'\r",
+							"};\r",
+							"client.id = 12345 // way to add property to object later\r",
+							"console.log(client);\r",
+							"console.log(client.lastName);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Objects Method",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const client = {\r",
+							"    'first-name':'Jamie', // this is a way to include special chacters in property\r",
+							"    lastName: 'Doe',\r",
+							"    age: 29,\r",
+							"    isMarried: false,\r",
+							"    email: 'jamie@example.com',\r",
+							"    sayHello: () => 'Hello',  // this a a method or action\r",
+							"    sayBye: function () {return 'Bye, my name is ' + this.firstName;}\r",
+							"    \r",
+							"};\r",
+							"client.id = 12345 // way to add property to object later\r",
+							"console.log(client);\r",
+							"console.log(client.lastName);\r",
+							"console.log(client.sayHello()); // this calls the method or action\r",
+							"console.log(client.sayBye());\r",
+							"console.log(client['first-name']);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Javascript in sending request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const client = {\r",
+							"    'first-name':'Jamie', // this is a way to include special chacters in property\r",
+							"    lastName: 'Doe',\r",
+							"    age: 29,\r",
+							"    isMarried: false,\r",
+							"    email: 'jamie@example.com',\r",
+							"    sayBye: function () {return 'Bye, my name is ' + this.firstName;}\r",
+							"    \r",
+							"};\r",
+							"\r",
+							"let json = JSON.stringify(client);  // will take javascript to json\r",
+							"let clientNew = JSON.parse(json) // will take json to javascript\r",
+							"console.log(json);\r",
+							"console.log(clientNew.lastName);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSON Parsing with Javascript",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"console.log(response);\r",
+							"console.log(response.status);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSON using javascript assertions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"\r",
+							"pm.test('Status is UP', () => {\r",
+							"    pm.expect(response.status).to.eql('UP');\r",
+							"});\r",
+							"console.log(response);\r",
+							"console.log(response.status);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Javascript arrays",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let numbers = [2,6,1,9,11];\r",
+							"let names = ['Jamie', 'Mary', 'Marv', 'Ken'];\r",
+							"let employees = [\r",
+							"    { firstName: 'Jamie',\r",
+							"    lastName: 'Doe',\r",
+							"    age: 29,\r",
+							"    hobbies: ['golf', 'reading', 'movies'] \r",
+							"    },\r",
+							"    {\r",
+							"    firstName: 'Jake',\r",
+							"    lastName: 'Doe',\r",
+							"    age: 31,\r",
+							"    hobbies: ['golf', 'tv', 'gardening', 'cooking']\r",
+							"    }\r",
+							"];\r",
+							"\r",
+							"let anything = [3, 'hello', {}, [], 73]  // rarely used by anything can be in an array\r",
+							"\r",
+							"const person = {\r",
+							"    firstName: 'Jamie',\r",
+							"    lastName: 'Doe',\r",
+							"    age: 29\r",
+							"}\r",
+							"const person2 = {\r",
+							"    firstName: 'Jake',\r",
+							"    lastName: 'Doe',\r",
+							"    age: 31\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Javascript arrays navagating",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let numbers = [2,6,1,9,11];\r",
+							"\r",
+							"const person = {\r",
+							"    firstName: 'Jamie',\r",
+							"    lastName: 'Doe',\r",
+							"    age: 29,\r",
+							"    socialProfiles: ['Facebook', 'Instagram', 'Github']\r",
+							"};\r",
+							"console.log(numbers);\r",
+							"console.log(numbers[3]);\r",
+							"console.log(person.socialProfiles[1]);\r",
+							"\r",
+							"const client = {\r",
+							"    first_name: 'Jake',\r",
+							"    last_name: 'Doe',\r",
+							"    age1: 31,\r",
+							"    socialPro: [{\r",
+							"        name: 'Facebook',\r",
+							"        handle: 'jake-doe'\r",
+							"    },{\r",
+							"        name: 'tiktok',\r",
+							"        handle: '@jakedoe'\r",
+							"    },{\r",
+							"        name: 'Instagram',\r",
+							"        handle: '@jake_power'\r",
+							"    }]\r",
+							"};\r",
+							"\r",
+							"console.log(client.socialPro[1]);\r",
+							"console.log(client.socialPro[1].handle);\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Navigating Data Structures",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"\r",
+							"console.log(response.Response.Data[0].Results[1].Address);\r",
+							"console.log(response.Response.Data[0].Results[1].Address.Active);\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://f4dc5b11334f49df94de18b4cbaee1ea.api.mockbin.io",
+					"protocol": "https",
+					"host": [
+						"f4dc5b11334f49df94de18b4cbaee1ea",
+						"api",
+						"mockbin",
+						"io"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Data Structures Navigation Example test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"\r",
+							"const firstPostalCode = response[0].Item01.Data[0].Results[0].Contact.Address.PostalCode;\r",
+							"\r",
+							"console.log(firstPostalCode);\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cde8bdc4bb9d45de9b1fff00c4118687.api.mockbin.io/",
+					"protocol": "https",
+					"host": [
+						"cde8bdc4bb9d45de9b1fff00c4118687",
+						"api",
+						"mockbin",
+						"io"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Builtin Methods for arrays",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let numbers = [5,7,3,20,35,87];\r",
+							"\r",
+							"numbers.push(15); // puts the number in the array at the end\r",
+							"console.log(numbers.pop()); // gives us the last item and pops it out of array\r",
+							"console.log(numbers.shift()) // gives us the first item and pops it out\r",
+							"console.log(numbers);\r",
+							"console.log(numbers.length);\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "For loops",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// loop statements i++ increments by 1\r",
+							"for (let i = 1; i <= 10; i++){\r",
+							"    console.log(i);\r",
+							"    }\r",
+							"\r",
+							"let numbers = [2,3,6,73,88,22,44];\r",
+							"for (let i = 0; i < numbers.length; i++) {\r",
+							"    console.log(numbers[i]);\r",
+							"}\r",
+							"\r",
+							"let array = [3,5,8,44,23,78];\r",
+							"function logItem(item, index, array) {\r",
+							"    console.log(item, index, array);\r",
+							"}\r",
+							"array.forEach(logItem);\r",
+							"// or\r",
+							"\r",
+							"array.forEach((item, index) => console.log(item,index));\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"console.log('Before the request');\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "If else statements",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let age = 16; \r",
+							"if (age >= 18) {\r",
+							"    console.log('You are an adult');\r",
+							"}\r",
+							"else {\r",
+							"    console.log(\"You are not an adult\");\r",
+							"}\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"console.log('Before the request');\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Finding data in array with find",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const numbers = [4,6,6,56,5,51,8];\r",
+							"\r",
+							"for (let i = 0; i < numbers.length; i++) {\r",
+							"    if (numbers[i] === 5){\r",
+							"        console.log('Found it');\r",
+							"    }\r",
+							"}\r",
+							"\r",
+							"numbers.forEach((item) => {\r",
+							"    if (item === 5) {\r",
+							"        console.log('Found it');\r",
+							"    }\r",
+							"});\r",
+							"\r",
+							"let foundItem = numbers.find((item) => item === 5);\r",
+							"console.log(foundItem);\r",
+							"if (foundItem) {\r",
+							"    console.log('Found it again');\r",
+							"}\r",
+							"\r",
+							"const person = [\r",
+							"    {\r",
+							"    name: 'Jamie',\r",
+							"    email: 'jamie@example.com'\r",
+							"    },\r",
+							"{\r",
+							"    name: 'jake',\r",
+							"    email: 'jake@example.com'\r",
+							"},\r",
+							"{\r",
+							"    name: 'lucy',\r",
+							"    email: 'lucy@example.com'\r",
+							"},\r",
+							"];\r",
+							"\r",
+							"personJamie = person.find((person) => person.name === 'Jamie');\r",
+							"console.log(personJamie.email);\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Global Variables",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.globals.set('firstName', 'Jamie');\r",
+							"console.log(pm.globals.get('firstName'));\r",
+							"pm.globals.unset('firstName');"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Array transform with map",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const array = [1,4,9,16];\r",
+							"\r",
+							"// function that times the number in the array by 2\r",
+							"function multiplyByTwo (number) {\r",
+							"    return number * 2;\r",
+							"}\r",
+							"// pass a function to map\r",
+							"const map = array.map(multiplyByTwo);\r",
+							"console.log(map);\r",
+							"\r",
+							"// or write it this way\r",
+							"const map1 = array.map(number => number * 2);\r",
+							"console.log(map1);\r",
+							"\r",
+							"const persons = [\r",
+							"    {\r",
+							"        name: 'Jamie',\r",
+							"        email: \"jamie@example.com\"\r",
+							"    },\r",
+							"    {\r",
+							"        name: 'Jake',\r",
+							"        email: 'jake@example.com'\r",
+							"    },\r",
+							"    {\r",
+							"        name: 'Lucy',\r",
+							"        email: 'lucy@example.com'\r",
+							"    }\r",
+							"];\r",
+							"// takes array of objects and creates an array of specific values in the object\r",
+							"console.log(persons.map(persons => persons.email))\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chai assertions arrays",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"let jsonData = pm.response.json();\r",
+							"console.log(jsonData.filters[2].name);\r",
+							"\r",
+							"//let manufacturer = jsonData.filters[2];\r",
+							"let manufacturer;\r",
+							"for (let filter of jsonData.filters) {\r",
+							"    //console.log(filter);\r",
+							"    if (filter.name == 'MANUFACTURER') {\r",
+							"        manufacturer = filter;\r",
+							"    }\r",
+							"}\r",
+							"\r",
+							"\r",
+							"console.log(manufacturer);\r",
+							"\r",
+							"pm.test('Manufacturer should not be allowed', ()=>{\r",
+							"    pm.expect(manufacturer.name).to.eql('MANUFACTURER');\r",
+							"    pm.expect(manufacturer.isAllowed).to.be.false;\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://5a4a2051f323409288cf3ea108cbfd48.api.mockbin.io/",
+					"protocol": "https",
+					"host": [
+						"5a4a2051f323409288cf3ea108cbfd48",
+						"api",
+						"mockbin",
+						"io"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chai assertions NEsted Object",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"let commentsStatus = jsonData.prefs.comments.status;\r",
+							"let voting = jsonData.prefs.voting;\r",
+							"console.log(jsonData.prefs.comments.status);\r",
+							"console.log(jsonData.limits['54bba24af6196bd5f824e563'].boards);\r",
+							"pm.test('Status is disabled', () => {\r",
+							"    pm.expect(commentsStatus).to.eql('disabled');\r",
+							"});\r",
+							"\r",
+							"pm.test('Voting is disabled', () => {\r",
+							"    pm.expect(voting).to.eql('disabled');\r",
+							"});\r",
+							"// the 54bb24 is a random generated number so bottom example deals with that aspect\r",
+							"pm.test('Board status is ok', () => {\r",
+							"    pm.expect(jsonData.limits['54bba24af6196bd5f824e563'].boards.totalPerMember.status).to.eql('ok');\r",
+							"})\r",
+							"// this code checks for that random number to be there and then it will allow you to continue down the line to the status key\r",
+							"let boardStatus;\r",
+							"for (let key in jsonData.limits) {\r",
+							"    console.log(key, jsonData.limits[key]);\r",
+							"    if (jsonData.limits[key].hasOwnProperty('boards')) {\r",
+							"        boardStatus = jsonData.limits[key].boards.totalPerMember.status;\r",
+							"    }\r",
+							"\r",
+							"}\r",
+							"pm.test('Board status labled ok', () => {\r",
+							"    pm.expect(boardStatus).to.eql('ok');\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://0ab7dbf0620943deb4e8417a3a91dc94.api.mockbin.io/",
+					"protocol": "https",
+					"host": [
+						"0ab7dbf0620943deb4e8417a3a91dc94",
+						"api",
+						"mockbin",
+						"io"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Example program",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Find all employees in the list who have been with the company for exactly or longer than 10 years and are still active in the company. The function should return only a list of senior employees.\r",
+							"/*Step 1. The first step is to iterate over the entire list of employees. Let's also use console.log() to check the data. One way is to use for.\r",
+							"\r",
+							"\r",
+							"\r",
+							"function findSeniorEmployees(employees, currentYear) {\r",
+							"    // Implement here your function\r",
+							"    let seniorEmployees = [];\r",
+							" \r",
+							"    for (let i=0; i<employees.length; i++) {\r",
+							"        console.log(JSON.stringify(employees[i]));\r",
+							"    }\r",
+							"    \r",
+							"    return seniorEmployees;\r",
+							"}\r",
+							"\r",
+							"\r",
+							"We are using the function JSON.stringify to properly display the object in the logs.\r",
+							"\r",
+							"An alternative way is to use forEach:\r",
+							"\r",
+							"\r",
+							"\r",
+							"function findSeniorEmployees(employees, currentYear) {\r",
+							"    // Implement here your function\r",
+							"    let seniorEmployees = [];\r",
+							" \r",
+							"    employees.forEach(function(employee) {\r",
+							"        console.log(JSON.stringify(employee));\r",
+							"    });\r",
+							"    \r",
+							"    return seniorEmployees;\r",
+							"}\r",
+							"\r",
+							"\r",
+							"Step 2: Let's populate the variable seniorEmployees with data from the employees argument within the iteration.\r",
+							"\r",
+							"\r",
+							"\r",
+							"function findSeniorEmployees(employees, currentYear) {\r",
+							"    // Implement here your function\r",
+							"    let seniorEmployees = [];\r",
+							" \r",
+							"    for (let i=0; i<employees.length; i++) {\r",
+							"        console.log(JSON.stringify(employees[i]));\r",
+							"        seniorEmployees.push(employees[i]);\r",
+							"    }\r",
+							"    \r",
+							"    return seniorEmployees;\r",
+							"}\r",
+							"\r",
+							"\r",
+							"Step 3: Let's add an if clause to keep only active employees. We will keep the console.log outside of the if block for debugging purposes.\r",
+							"\r",
+							"\r",
+							"\r",
+							"function findSeniorEmployees(employees, currentYear) {\r",
+							"    // Implement here your function\r",
+							"    let seniorEmployees = [];\r",
+							" \r",
+							"    for (let i=0; i<employees.length; i++) {\r",
+							"        console.log(JSON.stringify(employees[i]));\r",
+							"        if (employees[i].isActive) {\r",
+							"            seniorEmployees.push(employees[i]);        \r",
+							"        }\r",
+							"    }\r",
+							"    \r",
+							"    return seniorEmployees;\r",
+							"}\r",
+							"\r",
+							"\r",
+							"Step 4. Let's expand the if clause and to keep active employees that are 10 years or more in the company:\r",
+							"\r",
+							"\r",
+							"\r",
+							"function findSeniorEmployees(employees, currentYear) {\r",
+							"    // Implement here your function\r",
+							"    let seniorEmployees = [];\r",
+							" \r",
+							"    for (let i=0; i<employees.length; i++) {\r",
+							"        console.log(JSON.stringify(employees[i]));\r",
+							"        if (employees[i].isActive && employees[i].yearOfEmployment + 10 <= currentYear) {\r",
+							"            seniorEmployees.push(employees[i]);        \r",
+							"        }\r",
+							"    }\r",
+							"    \r",
+							"    return seniorEmployees;\r",
+							"}\r",
+							"\r",
+							"\r",
+							"Here is also the alternative solution with forEach\r",
+							"\r",
+							"\r",
+							"\r",
+							"function findSeniorEmployees(employees, currentYear) {\r",
+							"    let seniorEmployees = [];\r",
+							" \r",
+							"    employees.forEach(function(employee) {\r",
+							"        if (employee.isActive && employee.yearOfEmployment + 10 <= currentYear) {\r",
+							"            seniorEmployees.push(employee);\r",
+							"        }\r",
+							"    });\r",
+							"    \r",
+							"    return seniorEmployees;\r",
+							"}\r",
+							"*/\r",
+							"function findSeniorEmployees(employees, currentYear) {\r",
+							"    let seniorEmployees = [];\r",
+							" \r",
+							"    employees.forEach(function(employee) {\r",
+							"        if (employee.isActive && employee.yearOfEmployment + 10 <= currentYear) {\r",
+							"            seniorEmployees.push(employee);\r",
+							"        }\r",
+							"    });\r",
+							"    \r",
+							"    return seniorEmployees;\r",
+							"}\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"console.log('Before the request');\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://simple-grocery-store-api.glitch.me",
+			"type": "string"
+		},
+		{
+			"key": "accessToken",
+			"value": "Access Token",
+			"type": "string"
+		}
+	]
+}
