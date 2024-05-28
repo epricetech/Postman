@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "b8feb36d-8a5a-4624-8300-fb110db56fd6",
+		"name": "Trello Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29197134"
+	},
+	"item": [
+		{
+			"name": "Create Board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.globals.set(\"board_id\",jsonData.id);\r",
+							"\r",
+							"pm.test(\"Board Created Successfully\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct Board Name\", function () {\r",
+							"    pm.expect(jsonData.name).to.eql(\"myboard1\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{trellobase_url}}1/boards/?key=2e49b74379df6af24ff23dd27b3bf95b&name=myboard1&token=ATTA1a65f75812c2ee088294e5ef552f584147f556a4a9fc17ebf6d343adc19581670AD08297",
+					"host": [
+						"{{trellobase_url}}1"
+					],
+					"path": [
+						"boards",
+						""
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "2e49b74379df6af24ff23dd27b3bf95b"
+						},
+						{
+							"key": "name",
+							"value": "myboard1"
+						},
+						{
+							"key": "token",
+							"value": "ATTA1a65f75812c2ee088294e5ef552f584147f556a4a9fc17ebf6d343adc19581670AD08297"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Board Deleted Successfully\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/boards/{{board_id}}?key={{Key}}&token={{token}}&name=myboard1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"boards",
+						"{{board_id}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "name",
+							"value": "myboard1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Reasonable Response Time\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+					"});",
+					""
+				]
+			}
+		}
+	]
+}

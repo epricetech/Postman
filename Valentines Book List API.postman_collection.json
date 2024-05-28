@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "85bee034-8a2f-4013-a5ae-bbcc8a7fa79e",
+		"name": "Valentines Book List API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29197134"
+	},
+	"item": [
+		{
+			"name": "Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book List - fiction",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/books/lists?api-key=8fhg93xkjd38fhg834jdfgjd&list=fiction",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"books",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "api-key",
+							"value": "8fhg93xkjd38fhg834jdfgjd"
+						},
+						{
+							"key": "list",
+							"value": "fiction"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book List - non fiction",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/books/lists?api-key=8fhg93xkjd38fhg834jdfgjd&list=non-fiction",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"books",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "api-key",
+							"value": "8fhg93xkjd38fhg834jdfgjd"
+						},
+						{
+							"key": "list",
+							"value": "non-fiction"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book List - non fiction page 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/books/lists?api-key=8fhg93xkjd38fhg834jdfgjd&list=non-fiction&page=4",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"books",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "api-key",
+							"value": "8fhg93xkjd38fhg834jdfgjd"
+						},
+						{
+							"key": "list",
+							"value": "non-fiction"
+						},
+						{
+							"key": "page",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://valentines-book-list.glitch.me",
+			"type": "string"
+		}
+	]
+}
